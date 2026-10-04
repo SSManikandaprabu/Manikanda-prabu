@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S.S Manikanda Prabu | Portfolio</title>
+<style>
+:root{--bg:#030804;--g:#00ff41;--dim:#0a3d16;--tx:#b6ffc8}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 "Courier New",ui-monospace,monospace}
+a{color:var(--g)}
+section{position:relative;padding:96px 6vw;overflow:hidden;border-bottom:1px solid var(--dim)}
+.wrap{position:relative;z-index:1;max-width:980px;margin:auto}
+h1,h2{color:var(--g);letter-spacing:.04em}
+h1{font-size:clamp(34px,7vw,76px);line-height:1.05}
+h2{font-size:clamp(24px,4vw,38px);margin-bottom:28px}
+p{max-width:64ch}
+.sub{margin-top:18px;color:#5fae75}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;padding:14px 6vw;background:#030804e6;border-bottom:1px solid var(--dim)}
+.nav a{margin-left:18px;text-decoration:none;font-size:14px}
+/* boot preloader */
+#boot{position:fixed;inset:0;z-index:999;background:#000;color:var(--g);padding:8vh 6vw;font-size:clamp(14px,2.4vw,20px);white-space:pre-wrap}
+#boot.flash{background:#fff;color:#fff;transition:background .12s}
+#boot.out{opacity:0;transition:opacity .45s;pointer-events:none}
+/* mouse flashlight data stream */
+.stream{position:absolute;inset:0;z-index:0;color:var(--g);font-size:13px;line-height:1.5;word-break:break-all;overflow:hidden;opacity:.9;pointer-events:none;
+ -webkit-mask-image:radial-gradient(circle 200px at var(--x,-999px) var(--y,-999px),#000 0,transparent 100%);
+ mask-image:radial-gradient(circle 200px at var(--x,-999px) var(--y,-999px),#000 0,transparent 100%)}
+.stream-base{position:absolute;inset:0;z-index:0;color:#0b2412;font-size:13px;line-height:1.5;word-break:break-all;overflow:hidden;pointer-events:none}
+/* cards + RGB glitch */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{border:1px solid var(--dim);padding:20px;background:#04110a;cursor:default}
+.card h3{color:var(--g);font-size:18px;margin-bottom:8px}
+.card small{color:#5fae75}
+.glitching{animation:glitch .35s steps(2,end)}
+@keyframes glitch{
+0%{transform:translate(0);text-shadow:none}
+20%{transform:translate(-3px,1px);text-shadow:3px 0 #f0f,-3px 0 #0ff;box-shadow:3px 0 #ff1744,-3px 0 #2979ff}
+40%{transform:translate(3px,-1px);text-shadow:-3px 0 #ff1744,3px 0 #2979ff;box-shadow:-3px 0 #ff1744,3px 0 #00e676}
+60%{transform:translate(-2px,0);text-shadow:2px 0 #ff1744,-2px 0 #2979ff}
+100%{transform:translate(0);text-shadow:none;box-shadow:none}}
+.btn{display:inline-block;margin:26px 14px 0 0;padding:12px 22px;border:1px solid var(--g);text-decoration:none}
+.btn:hover{background:var(--g);color:#000}
+ul{list-style:none;padding:0}
+li{padding:6px 0;border-bottom:1px dashed var(--dim)}
+li span{color:#5fae75}
+.cur::after{content:"_";animation:b 1s steps(1) infinite}
+@keyframes b{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.glitching{animation:none}.cur::after{animation:none}}
+</style>
+</head>
+<body>
+<div id="boot" aria-hidden="true"></div>
+
+<nav class="nav"><span class="glitch-t">root@manikanda:~$</span>
+<span><a href="#about">about</a><a href="#work">work</a><a href="#learn">learning</a><a href="#contact">contact</a></span></nav>
+
+<section id="hero" style="min-height:100vh;display:flex;align-items:center">
+ <div class="wrap">
+  <h1 class="dec glitch-t" data-t="S.S MANIKANDA PRABU">S.S MANIKANDA PRABU</h1>
+  <p class="sub cur">B.Tech CSE student at SRM Institute of Science and Technology. I build apps with Flutter, Node.js and Python.</p>
+  <a class="btn" href="#work">View projects</a><a class="btn" href="mailto:ssmanikandaprabu@gmail.com">Send email</a>
+ </div>
+</section>
+
+<section id="about">
+ <div class="stream-base"></div><div class="stream"></div>
+ <div class="wrap">
+  <h2 class="dec" data-t="About me">About me</h2>
+  <p>I am a Computer Science student (CGPA 8.44) who likes turning ideas into working products. My interests are AI/ML, algorithms, operating systems and databases. Next up: the DevsHouse '26 hackathon in Chennai.</p>
+  <p style="margin-top:14px">Move your cursor over this section to scan the data stream.</p>
+ </div>
+</section>
+
+<section id="work">
+ <div class="wrap">
+  <h2 class="dec" data-t="Selected work">Selected work</h2>
+  <div class="grid">
+   <div class="card"><h3>Disaster Relief Volunteer Management</h3><p>Emergency request platform with dashboards that coordinate volunteers and victims.</p><small>DBMS, workflow design</small></div>
+   <div class="card"><h3>Pathfinding Visualizer</h3><p>Interactive tool that compares the efficiency of multiple routing algorithms.</p><small>Algorithms, data visualization</small></div>
+   <div class="card"><h3>Bus Ticket Reservation System</h3><p>Transport management platform with a full digital ticketing workflow.</p><small>Programming, UI</small></div>
+   <div class="card"><h3>Virtual Memory Simulator</h3><p>Compares FIFO, LRU and Optimal page replacement policies.</p><small>Operating systems</small></div>
+  </div>
+ </div>
+</section>
+
+<section id="learn">
+ <div class="wrap">
+  <h2 class="dec" data-t="Learning and leadership">Learning and leadership</h2>
+  <p style="margin-bottom:18px">Campus Delegate, WeMakeScholars (HEST 2025), selected under the Digital India Initiative.</p>
+  <ul>
+   <li>Python for Data Science and ML <span>LinkedIn Learning</span></li>
+   <li>Data Analysis with Python <span>Cognitive Class</span></li>
+   <li>Introduction to AI <span>The Open University</span></li>
+   <li>Building with Artificial Intelligence <span>Saylor University</span></li>
+   <li>Machine Learning <span>Scholiverse</span></li>
+   <li>Intro to IoT and Digital Transformation <span>Cisco</span></li>
+   <li>Intro to Operating Systems <span>NPTEL, IIT Madras</span></li>
+   <li>Master Data Management <span>TCS ION</span></li>
+   <li>PHP Programming <span>Academy Europe</span></li>
+  </ul>
+ </div>
+</section>
+
+<section id="contact" style="border-bottom:0">
+ <div class="stream-base"></div><div class="stream"></div>
+ <div class="wrap">
+  <h2 class="dec" data-t="Contact">Contact</h2>
+  <p>Open to internships and collaborations.</p>
+  <a class="btn" href="mailto:ssmanikandaprabu@gmail.com">ssmanikandaprabu@gmail.com</a>
+  <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE">LinkedIn</a>
+  <a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME">GitHub</a>
+ </div>
+</section>
+
+<script>
+(function(){
+var CH="0123456789ABCDEF!&$%#@?<>_/\\|{}[]";
+function rnd(){return CH[Math.floor(Math.random()*CH.length)]}
+
+/* 2. Boot sequence (about 2.5s) then white flash */
+var boot=document.getElementById("boot");
+var lines=["> user_auth: initiating...","> connecting to server... [OK]","> fetching data payload... [OK]","> root access granted.","> executing portfolio.exe..."];
+var i=0,out="";
+function step(){
+ if(i<lines.length){out+=lines[i++]+"\n";boot.textContent=out;setTimeout(step,420)}
+ else{boot.classList.add("flash");setTimeout(function(){boot.classList.add("out");setTimeout(function(){boot.remove();start()},450)},140)}
+}
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){boot.remove();start()}else{step()}
+
+/* 1. Cipher decrypt, about 1s */
+function decrypt(el){
+ var t=el.dataset.t,n=t.length,start=performance.now(),D=1000;
+ (function f(now){
+  var p=Math.min(1,(now-start)/D),lock=Math.floor(p*n),s="";
+  for(var k=0;k<n;k++)s+=(k<lock||t[k]===" ")?t[k]:rnd();
+  el.textContent=s;
+  if(p<1)requestAnimationFrame(f);else el.textContent=t;
+ })(start);
+}
+function start(){
+ var els=document.querySelectorAll(".dec");
+ els.forEach(function(e){e.textContent=""});
+ var io=new IntersectionObserver(function(en){
+  en.forEach(function(x){if(x.isIntersecting){decrypt(x.target);io.unobserve(x.target)}})
+ },{threshold:.4});
+ els.forEach(function(e){io.observe(e)});
+}
+
+/* 3. RGB glitch on hover (brief) */
+document.querySelectorAll(".card,.btn,.glitch-t").forEach(function(e){
+ e.addEventListener("mouseenter",function(){
+  e.classList.remove("glitching");void e.offsetWidth;e.classList.add("glitching");
+  setTimeout(function(){e.classList.remove("glitching")},360);
+ });
+});
+
+/* 4. Data stream flashlight, 200px radius */
+function hex(len){var s="";for(var k=0;k<len;k++){s+=(Math.random()<.5?"0x":"")+Math.floor(Math.random()*256).toString(16).toUpperCase().padStart(2,"0")+" "}return s}
+document.querySelectorAll("section").forEach(function(sec){
+ var st=sec.querySelector(".stream");if(!st)return;
+ var txt=hex(2200);st.textContent=txt;sec.querySelector(".stream-base").textContent=txt;
+ sec.addEventListener("mousemove",function(e){
+  var r=sec.getBoundingClientRect();
+  st.style.setProperty("--x",(e.clientX-r.left)+"px");
+  st.style.setProperty("--y",(e.clientY-r.top)+"px");
+ });
+ sec.addEventListener("mouseleave",function(){st.style.setProperty("--x","-999px")});
+});
+})();
+</script>
+</body>
+</html>
